@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculadora de Pagamento</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="card">
+    <p class="title">Calculadora de pagamento</p>
+    <p class="subtitle">Informe o valor e escolha a forma de pagamento</p>
+
+    <label class="label" for="valor">Valor total da compra</label>
+    <input type="text" id="valor" placeholder="R$ 0,00" oninput="formatVal(this)" />
+    <div class="err" id="err">Por favor, insira um valor válido.</div>
+
+    <label class="label">Forma de pagamento</label>
+    <div class="options">
+      <div class="opt" id="opt1" onclick="select(1)">
+        <span class="opt-icon">💵</span>
+        <span class="opt-label">Dinheiro / PIX</span>
+        <span class="opt-badge badge-green">10% de desconto</span>
+      </div>
+      <div class="opt" id="opt2" onclick="select(2)">
+        <span class="opt-icon">💳</span>
+        <span class="opt-label">Débito</span>
+        <span class="opt-badge badge-blue">5% de desconto</span>
+      </div>
+      <div class="opt" id="opt3" onclick="select(3)">
+        <span class="opt-icon">🏦</span>
+        <span class="opt-label">Crédito</span>
+        <span class="opt-badge badge-gray">Sem desconto</span>
+      </div>
+    </div>
+
+    <button id="calcBtn" onclick="calcular()">Calcular valor final</button>
+
+    <div class="result" id="result">
+      <div class="result-row">
+        <span class="lbl">Valor original</span>
+        <span class="val" id="r-original"></span>
+      </div>
+      <div class="result-row" id="r-desc-row">
+        <span class="lbl" id="r-desc-label"></span>
+        <span class="val" id="r-desc"></span>
+      </div>
+      <div class="result-row total">
+        <span class="lbl">Total a pagar</span>
+        <span class="val" id="r-total"></span>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
